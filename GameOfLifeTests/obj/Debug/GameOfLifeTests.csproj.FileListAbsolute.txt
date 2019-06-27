@@ -1,0 +1,17 @@
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\bin\Debug\GameOfLifeTests.dll
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\bin\Debug\GameOfLifeTests.pdb
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\bin\Debug\GameOfLife.exe
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\bin\Debug\GameOfLife.pdb
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\bin\Debug\GameOfLife.exe.config
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\obj\Debug\GameOfLifeTests.csprojAssemblyReference.cache
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\obj\Debug\GameOfLifeTests.csproj.CoreCompileInputs.cache
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\obj\Debug\GameOfLifeTests.csproj.CopyComplete
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\obj\Debug\GameOfLifeTests.dll
+C:\Users\dklit\Source\Repos\GameOfLife\GameOfLifeTests\obj\Debug\GameOfLifeTests.pdb
