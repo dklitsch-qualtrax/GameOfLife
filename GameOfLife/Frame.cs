@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameOfLife
 {
-    class Frame
+    public class Frame
     {
         public Frame(Board board, int xLocation, int yLocation)
         {
@@ -14,10 +14,16 @@ namespace GameOfLife
             this.Neighbors = board.GetNeighboringSquares(xLocation, yLocation);
         }
 
+        public Frame(Tile target, List<Tile> neighbors)
+        {
+            this.Target = target;
+            this.Neighbors = neighbors;
+        }
+
         public Tile Target { get; set; }
         public List<Tile> Neighbors { get; set;  }
 
-        public void UpdateStatus()
+        public void UpdateTargetTileStatus()
         {
             var livingNeighbors = Neighbors.Select(x => x.Alive).Count();
 

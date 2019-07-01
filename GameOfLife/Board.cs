@@ -5,6 +5,9 @@ namespace GameOfLife
 {
     public class Board
     {
+        public Board()
+        { }
+
         public Board(int width, int height)
         {
             this.tiles = new List<List<Tile>>();
@@ -23,6 +26,8 @@ namespace GameOfLife
         public Board(List<List<Tile>> filledSpacesOnBoard)
         {
             this.tiles = filledSpacesOnBoard;
+            this.Height = filledSpacesOnBoard.Count;
+            this.Width = filledSpacesOnBoard[0].Count;
         }
 
         public List<List<Tile>> tiles;
@@ -38,11 +43,16 @@ namespace GameOfLife
 
         private void AddCoordinate(int xLocation, int yLocation)
         {
-            if (xLocation > -1 && yLocation > -1)
+            if (CoordinatesAreWithinBounds(xLocation, yLocation))
                 neighborsCoordinates.Add((xLocation, yLocation));
         }
 
-        private void AddNeighborCoordinate(int targetXLocation, int targetYLocation)
+        private bool CoordinatesAreWithinBounds(int xLocation, int yLocation)
+        {
+            return xLocation > -1 && yLocation > -1 && xLocation < Width && yLocation < Height;
+        }
+
+        private void AddNeighborCoordinates(int targetXLocation, int targetYLocation)
         {
             AddCoordinate(targetXLocation - 1, targetYLocation - 1);
             AddCoordinate(targetXLocation, targetYLocation - 1);
@@ -58,8 +68,10 @@ namespace GameOfLife
         {
             var neighboringSquares = new List<Tile>();
 
+            AddNeighborCoordinates(xLocation, yLocation);
+
             foreach (var coordinate in neighborsCoordinates)
-                neighboringSquares.Add(tiles[coordinate.xLocation][coordinate.yLocation]);
+                neighboringSquares.Add(tiles[coordinate.xLocation - 1][coordinate.yLocation - 1]);
 
             return neighboringSquares;
         }
@@ -70,7 +82,7 @@ namespace GameOfLife
             {
                 for (var rowIndex = 0; rowIndex <= Width; rowIndex++)
                 {
-                    new Frame(this, rowIndex, columnIndex).UpdateStatus();
+                    new Frame(this, rowIndex, columnIndex).UpdateTargetTileStatus();
                 }
             }
         }

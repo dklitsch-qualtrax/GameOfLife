@@ -5,14 +5,22 @@ using System.Collections.Generic;
 namespace GameOfLifeTests
 {
     [TestClass]
-    public class GameOfLifeTests
+    public class BoardTests
     {
 
         private List<Tile> EmptyRow(int columns)
         {
             var row = new List<Tile>();
-            for (var rowIndex = 0; rowIndex <= columns; rowIndex++)
+            for (var rowIndex = 1; rowIndex <= columns; rowIndex++)
                 row.Add(new Tile() { Alive = false });
+            return row;
+        }
+
+        private List<Tile> FilledRow(int columns)
+        {
+            var row = new List<Tile>();
+            for (var rowIndex = 1; rowIndex <= columns; rowIndex++)
+                row.Add(new Tile() { Alive = true });
             return row;
         }
 
@@ -23,7 +31,7 @@ namespace GameOfLifeTests
         }
 
         [TestMethod]
-        public void BasicGame()
+        public void ProgressToNextGenerationReturnsCorrectBoard()
         {
             var inputTiles = new List<List<Tile>>
             {
@@ -68,6 +76,36 @@ namespace GameOfLifeTests
             inputBoard.ProgressToNextGeneration();
 
             Assert.IsTrue(inputBoard.Matches(expectedBoard));
+        }
+
+        [TestMethod]
+        public void GetNeighboringSquaresReturns8SquaresIfSurrounded()
+        {
+            var inputBoard = new Board(new List<List<Tile>>()
+                {
+                    FilledRow(3),
+                    FilledRow(3),
+                    FilledRow(3)
+                });
+
+            var result = inputBoard.GetNeighboringSquares(1, 1);
+
+            Assert.AreEqual(8, result.Count);
+        }
+
+        [TestMethod]
+        public void GetNeighboringSquaresReturns3SquaresIfAtTheTopOfTheBoard()
+        {
+            var inputBoard = new Board(new List<List<Tile>>()
+                {
+                    FilledRow(3),
+                    FilledRow(3),
+                    FilledRow(3)
+                });
+
+            var result = inputBoard.GetNeighboringSquares(2, 2);
+
+            Assert.AreEqual(3, result.Count);
         }
     }
 }
