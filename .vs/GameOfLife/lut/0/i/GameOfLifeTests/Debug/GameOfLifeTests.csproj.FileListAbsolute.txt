@@ -1,0 +1,8 @@
+C:\Users\D\source\repos\GameOfLife\.vs\GameOfLife\lut\0\b\GameOfLifeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\D\source\repos\GameOfLife\.vs\GameOfLife\lut\0\b\GameOfLifeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\D\source\repos\GameOfLife\.vs\GameOfLife\lut\0\b\GameOfLifeTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\D\source\repos\GameOfLife\.vs\GameOfLife\lut\0\b\GameOfLifeTests\bin\Debug\GameOfLifeTests.dll
+C:\Users\D\source\repos\GameOfLife\.vs\GameOfLife\lut\0\i\GameOfLifeTests\Debug\GameOfLifeTests.csproj.CoreCompileInputs.cache
+C:\Users\D\source\repos\GameOfLife\.vs\GameOfLife\lut\0\i\GameOfLifeTests\Debug\GameOfLifeTests.csproj.CopyComplete
+C:\Users\D\source\repos\GameOfLife\.vs\GameOfLife\lut\0\i\GameOfLifeTests\Debug\GameOfLifeTests.dll
+C:\Users\D\source\repos\GameOfLife\.vs\GameOfLife\lut\0\i\GameOfLifeTests\Debug\GameOfLifeTests.csprojAssemblyReference.cache

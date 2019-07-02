@@ -9,7 +9,7 @@ using GameOfLife;
 namespace GameOfLifeTests
 {
     [TestClass]
-    class FrameTests
+    public class FrameTests
     {
         [TestMethod]
         public void UpdateStatusUnderpopulationKillsTile()
@@ -17,6 +17,94 @@ namespace GameOfLifeTests
             var testFrame = new Frame(
                 new Tile() { Alive = true },
                 new List<Tile>()
+                );
+
+            testFrame.UpdateTargetTileStatus();
+
+            Assert.IsFalse(testFrame.Target.Alive);
+        }
+
+        [TestMethod]
+        public void UpdateStatusOverpopulationKillsTile()
+        {
+            var testFrame = new Frame(
+                new Tile() { Alive = true },
+                new List<Tile>()
+                    {
+                        new Tile() { Alive = true },
+                        new Tile() { Alive = true },
+                        new Tile() { Alive = true },
+                        new Tile() { Alive = true }
+                    }
+                );
+
+            testFrame.UpdateTargetTileStatus();
+
+            Assert.IsFalse(testFrame.Target.Alive);
+        }
+
+        [TestMethod]
+        public void UpdateStatusTwoNeighborsDoesNotKillTarget()
+        {
+            var testFrame = new Frame(
+                new Tile() { Alive = true },
+                new List<Tile>()
+                    {
+                        new Tile() { Alive = true },
+                        new Tile() { Alive = true },
+                    }
+                );
+
+            testFrame.UpdateTargetTileStatus();
+
+            Assert.IsTrue(testFrame.Target.Alive);
+        }
+
+        [TestMethod]
+        public void UpdateStatusThreeNeighborsDoesNotKillTarget()
+        {
+            var testFrame = new Frame(
+                new Tile() { Alive = true },
+                new List<Tile>()
+                    {
+                        new Tile() { Alive = true },
+                        new Tile() { Alive = true },
+                        new Tile() { Alive = true }
+                    }
+                );
+
+            testFrame.UpdateTargetTileStatus();
+
+            Assert.IsTrue(testFrame.Target.Alive);
+        }
+
+        [TestMethod]
+        public void UpdateStatusThreeNeighborsComesAlive()
+        {
+            var testFrame = new Frame(
+                new Tile() { Alive = false },
+                new List<Tile>()
+                    {
+                        new Tile() { Alive = true },
+                        new Tile() { Alive = true },
+                        new Tile() { Alive = true }
+                    }
+                );
+
+            testFrame.UpdateTargetTileStatus();
+
+            Assert.IsTrue(testFrame.Target.Alive);
+        }
+
+        [TestMethod]
+        public void UpdateStatusUnderpopulatedDeadCellStaysDead()
+        {
+            var testFrame = new Frame(
+                new Tile() { Alive = false },
+                new List<Tile>()
+                    {
+                        new Tile() { Alive = true },
+                    }
                 );
 
             testFrame.UpdateTargetTileStatus();

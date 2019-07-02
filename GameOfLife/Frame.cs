@@ -25,7 +25,7 @@ namespace GameOfLife
 
         public void UpdateTargetTileStatus()
         {
-            var livingNeighbors = Neighbors.Select(x => x.Alive).Count();
+            var livingNeighbors = Neighbors.Where(x => x.Alive).Count();
 
             if (Target.Alive)
             {

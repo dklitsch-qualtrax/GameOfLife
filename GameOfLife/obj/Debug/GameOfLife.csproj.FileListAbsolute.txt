@@ -5,3 +5,10 @@ C:\Users\dklit\Source\Repos\GameOfLife\GameOfLife\obj\Debug\GameOfLife.csprojAss
 C:\Users\dklit\Source\Repos\GameOfLife\GameOfLife\obj\Debug\GameOfLife.csproj.CoreCompileInputs.cache
 C:\Users\dklit\Source\Repos\GameOfLife\GameOfLife\obj\Debug\GameOfLife.exe
 C:\Users\dklit\Source\Repos\GameOfLife\GameOfLife\obj\Debug\GameOfLife.pdb
+C:\Users\D\source\repos\GameOfLife\GameOfLife\bin\Debug\GameOfLife.exe.config
+C:\Users\D\source\repos\GameOfLife\GameOfLife\bin\Debug\GameOfLife.exe
+C:\Users\D\source\repos\GameOfLife\GameOfLife\bin\Debug\GameOfLife.pdb
+C:\Users\D\source\repos\GameOfLife\GameOfLife\obj\Debug\GameOfLife.csprojAssemblyReference.cache
+C:\Users\D\source\repos\GameOfLife\GameOfLife\obj\Debug\GameOfLife.csproj.CoreCompileInputs.cache
+C:\Users\D\source\repos\GameOfLife\GameOfLife\obj\Debug\GameOfLife.exe
+C:\Users\D\source\repos\GameOfLife\GameOfLife\obj\Debug\GameOfLife.pdb

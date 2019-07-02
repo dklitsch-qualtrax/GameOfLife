@@ -26,7 +26,7 @@ namespace GameOfLifeTests
 
         private void FillRowXTimes(List<Tile> row, int numberOfTimes, bool tileIsAlive = false)
         {
-            for (var rowIndex = 0; rowIndex <= numberOfTimes; rowIndex++)
+            for (var rowIndex = 1; rowIndex <= numberOfTimes; rowIndex++)
                 row.Add(new Tile() { Alive = tileIsAlive });
         }
 
@@ -35,42 +35,42 @@ namespace GameOfLifeTests
         {
             var inputTiles = new List<List<Tile>>
             {
-                EmptyRow(8)
+                EmptyRow(4)
             };
 
             var filledRow = new List<Tile>();
-            FillRowXTimes(filledRow, 4);
+            FillRowXTimes(filledRow, 2);
             filledRow.Add(new Tile() { Alive = true });
-            FillRowXTimes(filledRow, 3);
+            FillRowXTimes(filledRow, 1);
             inputTiles.Add(filledRow);
 
             filledRow = new List<Tile>();
-            FillRowXTimes(filledRow, 3);
+            FillRowXTimes(filledRow, 1);
             FillRowXTimes(filledRow, 2, true);
-            FillRowXTimes(filledRow, 3);
+            FillRowXTimes(filledRow, 1);
             inputTiles.Add(filledRow);
 
-            inputTiles.Add(EmptyRow(8));
+            inputTiles.Add(EmptyRow(4));
             var inputBoard = new Board(inputTiles);
 
             var expectedTiles = new List<List<Tile>>
             {
-                EmptyRow(8)
+                EmptyRow(4)
             };
 
             filledRow = new List<Tile>();
-            FillRowXTimes(filledRow, 3);
+            FillRowXTimes(filledRow, 1);
             FillRowXTimes(filledRow, 2, true);
-            FillRowXTimes(filledRow, 3);
+            FillRowXTimes(filledRow, 1);
             expectedTiles.Add(filledRow);
 
             filledRow = new List<Tile>();
-            FillRowXTimes(filledRow, 3);
+            FillRowXTimes(filledRow, 1);
             FillRowXTimes(filledRow, 2, true);
-            FillRowXTimes(filledRow, 3);
+            FillRowXTimes(filledRow, 1);
             expectedTiles.Add(filledRow);
 
-            expectedTiles.Add(EmptyRow(8));
+            expectedTiles.Add(EmptyRow(4));
             var expectedBoard = new Board(expectedTiles);
 
             inputBoard.ProgressToNextGeneration();

@@ -26,8 +26,8 @@ namespace GameOfLife
         public Board(List<List<Tile>> filledSpacesOnBoard)
         {
             this.tiles = filledSpacesOnBoard;
-            this.Height = filledSpacesOnBoard.Count;
-            this.Width = filledSpacesOnBoard[0].Count;
+            this.Height = filledSpacesOnBoard[0].Count;
+            this.Width = filledSpacesOnBoard.Count;
         }
 
         public List<List<Tile>> tiles;
@@ -54,6 +54,7 @@ namespace GameOfLife
 
         private void AddNeighborCoordinates(int targetXLocation, int targetYLocation)
         {
+            neighborsCoordinates = new List<(int xLocation, int yLocation)>();
             AddCoordinate(targetXLocation - 1, targetYLocation - 1);
             AddCoordinate(targetXLocation, targetYLocation - 1);
             AddCoordinate(targetXLocation + 1, targetYLocation - 1);
@@ -71,16 +72,16 @@ namespace GameOfLife
             AddNeighborCoordinates(xLocation, yLocation);
 
             foreach (var coordinate in neighborsCoordinates)
-                neighboringSquares.Add(tiles[coordinate.xLocation - 1][coordinate.yLocation - 1]);
+                neighboringSquares.Add(tiles[coordinate.xLocation][coordinate.yLocation]);
 
             return neighboringSquares;
         }
 
         public void ProgressToNextGeneration()
         {
-            for (var columnIndex = 0; columnIndex <= Height; columnIndex++)
+            for (var columnIndex = 0; columnIndex < Height; columnIndex++)
             {
-                for (var rowIndex = 0; rowIndex <= Width; rowIndex++)
+                for (var rowIndex = 0; rowIndex < Width; rowIndex++)
                 {
                     new Frame(this, rowIndex, columnIndex).UpdateTargetTileStatus();
                 }
@@ -92,9 +93,9 @@ namespace GameOfLife
             if (this.Height != boardToCompare.Height || this.Width != boardToCompare.Width)
                 throw new Exception("Cannot compare different sized boards.");
 
-            for (var columnIndex = 0; columnIndex <= Width; columnIndex++)
+            for (var columnIndex = 0; columnIndex < Width; columnIndex++)
             {
-                for (var rowIndex = 0; rowIndex < Height; columnIndex++)
+                for (var rowIndex = 0; rowIndex < Height; rowIndex++)
                 {
                     var tileOnThisBoard = this.tiles[columnIndex][rowIndex];
                     var tileToCompare = boardToCompare.tiles[columnIndex][rowIndex];
