@@ -1,5 +1,0 @@
-C:\Users\D\source\repos\GameOfLife\.vs\GameOfLife\lut\0\b\GameOfLife\bin\Debug\GameOfLife.exe.config
-C:\Users\D\source\repos\GameOfLife\.vs\GameOfLife\lut\0\b\GameOfLife\bin\Debug\GameOfLife.exe
-C:\Users\D\source\repos\GameOfLife\.vs\GameOfLife\lut\0\i\GameOfLife\Debug\GameOfLife.csproj.CoreCompileInputs.cache
-C:\Users\D\source\repos\GameOfLife\.vs\GameOfLife\lut\0\i\GameOfLife\Debug\GameOfLife.csproj.CopyComplete
-C:\Users\D\source\repos\GameOfLife\.vs\GameOfLife\lut\0\i\GameOfLife\Debug\GameOfLife.exe
