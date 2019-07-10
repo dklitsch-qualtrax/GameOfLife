@@ -23,21 +23,18 @@ namespace GameOfLife
         public Tile Target { get; set; }
         public List<Tile> Neighbors { get; set;  }
 
+        public int LivingNeighborsCount => Neighbors.Where(x => x.Alive).Count();
+
+        public bool PopulationIsSustainable => (LivingNeighborsCount == 2 || LivingNeighborsCount == 3);
+
+        public bool PopulationIncreasedDueToMigration => (LivingNeighborsCount == 3);
+
         public void UpdateTargetTileStatus()
         {
-            var livingNeighbors = Neighbors.Where(x => x.Alive).Count();
-
             if (Target.Alive)
-            {
-                if (livingNeighbors < 2 || livingNeighbors > 3)
-                    Target.Alive = false;
-            }
+                Target.Alive = PopulationIsSustainable;
             else
-            {
-                if (livingNeighbors == 3)
-                    Target.Alive = true; 
-            }
-            
+                Target.Alive = PopulationIncreasedDueToMigration; 
         }
 
     }
