@@ -73,9 +73,7 @@ namespace GameOfLifeTests
             expectedTiles.Add(EmptyRow(4));
             var expectedBoard = new Board(expectedTiles);
 
-            inputBoard.ProgressToNextGeneration();
-
-            Assert.IsTrue(inputBoard.Matches(expectedBoard));
+            Assert.IsTrue(inputBoard.GetNextGenerationBoard().Matches(expectedBoard));
         }
 
         [TestMethod]

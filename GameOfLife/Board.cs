@@ -78,12 +78,21 @@ namespace GameOfLife
             return neighboringSquares;
         }
 
-        public void ProgressToNextGeneration()
+        public Board GetNextGenerationBoard()
         {
+            var newTiles = new List<List<Tile>>();
 
-            foreach (var rowIndex in Enumerable.Range(0, Height - 1))
-                foreach (var columnindex in Enumerable.Range(0, Width - 1))
-                    new Frame(this, columnindex, rowIndex).UpdateTargetTileStatus();
+            foreach (var rowIndex in Enumerable.Range(0, Height))
+            {
+                newTiles.Add(new List<Tile>());
+                foreach (var columnindex in Enumerable.Range(0, Width))
+                {
+                    newTiles[rowIndex].Add(new Frame(this, columnindex, rowIndex).UpdateTargetTileStatus());
+                }
+            }
+                    
+
+            return new Board(newTiles);
         }
 
         public bool Matches(Board boardToCompare)
