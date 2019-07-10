@@ -29,12 +29,20 @@ namespace GameOfLife
 
         public bool PopulationIncreasedDueToMigration => (LivingNeighborsCount == 3);
 
-        public void UpdateTargetTileStatus()
+        public Tile UpdateTargetTileStatus()
         {
             if (Target.Alive)
+            {
                 Target.Alive = PopulationIsSustainable;
+                return new Tile { Alive = PopulationIsSustainable};
+            }
+                
             else
-                Target.Alive = PopulationIncreasedDueToMigration; 
+            {
+                Target.Alive = PopulationIncreasedDueToMigration;
+                return new Tile { Alive = PopulationIncreasedDueToMigration };
+            }
+                
         }
 
     }
