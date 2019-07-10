@@ -19,7 +19,7 @@ namespace GameOfLifeTests
                 new List<Tile>()
                 );
 
-            Assert.IsFalse(testFrame.UpdateTargetTileStatus().Alive);
+            Assert.IsFalse(testFrame.GetNextGenerationTile().Alive);
         }
 
         [TestMethod]
@@ -36,7 +36,7 @@ namespace GameOfLifeTests
                     }
                 );
 
-            Assert.IsFalse(testFrame.UpdateTargetTileStatus().Alive);
+            Assert.IsFalse(testFrame.GetNextGenerationTile().Alive);
         }
 
         [TestMethod]
@@ -51,7 +51,7 @@ namespace GameOfLifeTests
                     }
                 );
 
-            Assert.IsTrue(testFrame.UpdateTargetTileStatus().Alive);
+            Assert.IsTrue(testFrame.GetNextGenerationTile().Alive);
         }
 
         [TestMethod]
@@ -67,7 +67,7 @@ namespace GameOfLifeTests
                     }
                 );
 
-            Assert.IsTrue(testFrame.UpdateTargetTileStatus().Alive);
+            Assert.IsTrue(testFrame.GetNextGenerationTile().Alive);
         }
 
         [TestMethod]
@@ -83,7 +83,7 @@ namespace GameOfLifeTests
                     }
                 );
 
-            Assert.IsTrue(testFrame.UpdateTargetTileStatus().Alive);
+            Assert.IsTrue(testFrame.GetNextGenerationTile().Alive);
         }
 
         [TestMethod]
@@ -97,7 +97,7 @@ namespace GameOfLifeTests
                     }
                 );
 
-            Assert.IsFalse(testFrame.UpdateTargetTileStatus().Alive);
+            Assert.IsFalse(testFrame.GetNextGenerationTile().Alive);
         }
     }
 }

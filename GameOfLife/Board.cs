@@ -87,7 +87,7 @@ namespace GameOfLife
                 newTiles.Add(new List<Tile>());
                 foreach (var columnindex in Enumerable.Range(0, Width))
                 {
-                    newTiles[rowIndex].Add(new Frame(this, columnindex, rowIndex).UpdateTargetTileStatus());
+                    newTiles[rowIndex].Add(new Frame(this, columnindex, rowIndex).GetNextGenerationTile());
                 }
             }
                     
