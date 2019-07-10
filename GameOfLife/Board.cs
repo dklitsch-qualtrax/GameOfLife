@@ -81,9 +81,9 @@ namespace GameOfLife
         public void ProgressToNextGeneration()
         {
 
-            foreach (var columnIndex in Enumerable.Range(0, Height - 1))
-                foreach (var rowIndex in Enumerable.Range(0, Width - 1))
-                    new Frame(this, rowIndex, columnIndex).UpdateTargetTileStatus();
+            foreach (var rowIndex in Enumerable.Range(0, Height - 1))
+                foreach (var columnindex in Enumerable.Range(0, Width - 1))
+                    new Frame(this, columnindex, rowIndex).UpdateTargetTileStatus();
         }
 
         public bool Matches(Board boardToCompare)
