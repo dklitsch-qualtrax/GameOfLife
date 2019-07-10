@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GameOfLife
 {
@@ -79,13 +80,10 @@ namespace GameOfLife
 
         public void ProgressToNextGeneration()
         {
-            for (var columnIndex = 0; columnIndex < Height; columnIndex++)
-            {
-                for (var rowIndex = 0; rowIndex < Width; rowIndex++)
-                {
+
+            foreach (var columnIndex in Enumerable.Range(0, Height - 1))
+                foreach (var rowIndex in Enumerable.Range(0, Width - 1))
                     new Frame(this, rowIndex, columnIndex).UpdateTargetTileStatus();
-                }
-            }
         }
 
         public bool Matches(Board boardToCompare)
